@@ -1,0 +1,9 @@
+data/*
+.idea/*
+models/*
+fl_data/*
+*.png
+*.h5
+QuickDraw/*
+venv/*
+fldata/*
