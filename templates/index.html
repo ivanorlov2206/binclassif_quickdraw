@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
 </head>
-<body>
+<body style="touch-action: none;">
     <canvas id="canv" width="640" height="480" style="background-color: #000000;"></canvas><br>
     <select name="Model" id="model">
       {% for name in names %}
@@ -23,12 +23,12 @@
         var mouse = {x: 0, y: 0};
         var draw = false;
 
-        canvas.addEventListener("mousedown", function(e) {
+        canvas.addEventListener("pointerdown", function(e) {
             mouse.x = e.pageX - this.offsetLeft;
             mouse.y = e.pageY - this.offsetTop;
             draw = true;
         });
-        canvas.addEventListener("mousemove", function(e) {
+        canvas.addEventListener("pointermove", function(e) {
             if (draw == true) {
                 mouse.x = e.pageX - this.offsetLeft;
                 mouse.y = e.pageY - this.offsetTop;
@@ -39,7 +39,7 @@
                 context.fill();
             }
         });
-        canvas.addEventListener("mouseup", function(e) {
+        canvas.addEventListener("pointerup", function(e) {
             mouse.x = e.pageX - this.offsetLeft;
             mouse.y = e.pageY - this.offsetTop;
             draw = false;
